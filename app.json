@@ -3577,7 +3577,7 @@
     {
       "id": "fingerbot",
       "name": {
-        "en": "Finger Bot"
+        "en": "Fingerbot"
       },
       "class": "socket",
       "platforms": [
@@ -3587,17 +3587,16 @@
         "zigbee"
       ],
       "capabilities": [
-        "onoff",
-        "measure_battery"
+        "onoff"
       ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "approximated": true
+        }
+      },
       "images": {
         "large": "/drivers/fingerbot/assets/images/large.png",
         "small": "/drivers/fingerbot/assets/images/small.png"
-      },
-      "energy": {
-        "batteries": [
-          "CR2"
-        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -3614,82 +3613,18 @@
               61184
             ],
             "bindings": [
-              25,
-              10
+              10,
+              25
             ]
           }
         },
         "learnmode": {
-          "image": "/drivers/fingerbot/assets/icon.svg",
           "instruction": {
-            "en": "Press the button on the Finger Bot to enter pairing mode."
+            "en": "Press and hold down the reset button for aprox 5 seconds until the LED blinks rapidly."
           }
         }
       },
-      "settings": [
-        {
-          "id": "reverse",
-          "type": "checkbox",
-          "label": {
-            "en": "Reverse mode"
-          },
-          "hint": {
-            "en": "Enable reverse operation mode."
-          }
-        },
-        {
-          "id": "lower_limit",
-          "type": "number",
-          "label": {
-            "en": "Lower movement limit (%)"
-          },
-          "hint": {
-            "en": "Set the lower limit of the Finger Bot's movement (in percentage)."
-          },
-          "value": 50,
-          "min": 0,
-          "max": 100,
-          "step": 1
-        },
-        {
-          "id": "upper_limit",
-          "type": "number",
-          "label": {
-            "en": "Upper movement limit (%)"
-          },
-          "hint": {
-            "en": "Set the upper limit of the Finger Bot's movement (in percentage)."
-          },
-          "value": 100,
-          "min": 0,
-          "max": 100,
-          "step": 1
-        },
-        {
-          "id": "delay",
-          "type": "number",
-          "label": {
-            "en": "Delay (seconds)"
-          },
-          "hint": {
-            "en": "Set the sustain time for the Finger Bot (in seconds)."
-          },
-          "value": 1,
-          "min": 0,
-          "max": 10,
-          "step": 1
-        },
-        {
-          "id": "touch",
-          "type": "checkbox",
-          "label": {
-            "en": "Touch control"
-          },
-          "hint": {
-            "en": "Enable touch control for the Finger Bot."
-          }
-        }
-      ]
+      "settings": []
     },
     {
       "id": "flood_sensor",
