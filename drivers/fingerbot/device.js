@@ -34,35 +34,6 @@ class FingerBotTuya extends TuyaSpecificClusterDevice {
       }
     });
 
-    // Register finger_bot_mode capability listener
-    this.registerCapabilityListener('finger_bot_mode', async (mode) => {
-      const modeMapping = {
-        'click': 0,
-        'switch': 1,
-        'program': 2
-      };
-      const modeValue = modeMapping[mode];
-      try {
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, modeValue);
-        this.log('Finger Bot mode set to', mode);
-      } catch (e) {
-        this.log('Failed to set mode:', e.message, e);
-      }
-    });
-
-    // Register flow card listener for finger_bot_mode
-    this.homey.flow.getActionCard('set_finger_bot_mode')
-      .registerRunListener(async (args) => {
-        const modeMapping = {
-          'click': 0,
-          'switch': 1,
-          'program': 2
-        };
-        const modeValue = modeMapping[args.mode];
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, modeValue);
-        this.log('Finger Bot mode set via flow to', args.mode);
-        return true;
-      });
 
     // Load settings and send to device
     this._updateSettings();
@@ -103,9 +74,6 @@ class FingerBotTuya extends TuyaSpecificClusterDevice {
     switch (dp) {
       case V1_FINGER_BOT_DATA_POINTS.onOff:
         await this.setCapabilityValue('onoff', parsedValue);
-        break;
-      case V1_FINGER_BOT_DATA_POINTS.mode:
-        await this.setCapabilityValue('finger_bot_mode', ['click', 'switch', 'program'][parsedValue]);
         break;
       case V1_FINGER_BOT_DATA_POINTS.battery:
         await this.setCapabilityValue('measure_battery', parsedValue);

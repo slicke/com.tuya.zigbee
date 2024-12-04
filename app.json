@@ -1237,46 +1237,6 @@
         ]
       },
       {
-        "id": "set_finger_bot_mode",
-        "title": {
-          "en": "Set Finger Bot mode"
-        },
-        "titleFormatted": {
-          "en": "Set Finger Bot mode to [[finger_bot_mode]]"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=fingerbot"
-          },
-          {
-            "name": "finger_bot_mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "click",
-                "label": {
-                  "en": "Click"
-                }
-              },
-              {
-                "id": "switch",
-                "label": {
-                  "en": "Switch"
-                }
-              },
-              {
-                "id": "program",
-                "label": {
-                  "en": "Program"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
         "id": "siren_alarm_state",
         "title": {
           "en": "Change the alarm state",
@@ -3628,8 +3588,7 @@
       ],
       "capabilities": [
         "onoff",
-        "measure_battery",
-        "finger_bot_mode"
+        "measure_battery"
       ],
       "images": {
         "large": "/drivers/fingerbot/assets/images/large.png",
@@ -13662,35 +13621,6 @@
       "uiComponent": "toggle",
       "getable": true,
       "setable": true
-    },
-    "finger_bot_mode": {
-      "type": "enum",
-      "title": {
-        "en": "Finger Bot Mode"
-      },
-      "getable": true,
-      "setable": true,
-      "values": [
-        {
-          "id": "click",
-          "title": {
-            "en": "Click"
-          }
-        },
-        {
-          "id": "switch",
-          "title": {
-            "en": "Switch"
-          }
-        },
-        {
-          "id": "program",
-          "title": {
-            "en": "Program"
-          }
-        }
-      ],
-      "uiComponent": "picker"
     },
     "lidl_xmas_mode": {
       "title": {
